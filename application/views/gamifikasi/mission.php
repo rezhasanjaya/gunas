@@ -2,7 +2,6 @@
         <h2 class="pb-2 mb-4 mt-3 border-bottom"><center><b>Achievement Page</b></center></h2>
 	    <p>Here are your mission</p>
         <a href="<?=base_url() ?>Mission/assignment">
-        <a href="<?= base_url(); ?>Mission/assignment" class="card">Edit</a>
         <div class="card mb-3">
             <div class="row g-0">
                 <div class="col-md-4">
@@ -24,7 +23,7 @@
         <div class="card mb-3">
             <div class="row g-0">
                 <div class="col-md-4">
-                    <img src="..." class="img-fluid rounded-start" alt="...">
+                    <img src="assets/img/deluxe.jpg" class="img-fluid rounded-start" alt="...">
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
@@ -41,7 +40,7 @@
         <div class="card mb-3">
             <div class="row g-0">
                 <div class="col-md-4">
-                    <img src="..." class="img-fluid rounded-start" alt="...">
+                    <img src="assets/img/deluxe.jpg" class="img-fluid rounded-start" alt="...">
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">

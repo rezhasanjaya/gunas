@@ -51,7 +51,6 @@ class Penginapan_model extends CI_Model
         $this->db->from('data_penginapan');
         $this->db->join('kamar', 'data_penginapan.no_kamar = kamar.no_kamar');
         $this->db->join('pegawai', 'data_penginapan.id_pegawai = pegawai.id_pegawai');
-        $this->db->where('kamar.cek', 1);
         $this->db->where('data_penginapan.done', 0);
         $query = $this->db->get();
         return $query->result_array();
