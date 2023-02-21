@@ -8,7 +8,7 @@ class Auth extends CI_Controller
         $this->load->model('Auth_model');
         if ($this->session->userdata('role_id') == '1') {
             redirect('dashboard');
-        } else if ($this->session->userdata('role_id') == '2') {
+        } else if ($this->session->userdata('role_id') == '3') {
             redirect('pegawaiPage');
         }
     }
