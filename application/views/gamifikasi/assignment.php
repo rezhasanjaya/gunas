@@ -12,11 +12,10 @@
                     <div>
                         <div>
                             <div class="form-group mt-3 ">
-                                <label for="pelanggan">Pelanggan</label>
                                 <select class="js-states form-control" name="pelanggan" id="pelanggan">
                                     <option>Pilih Nama Pelanggan</option>
                                     <?php foreach ($pelanggan as $p) : ?>
-                                        <option value="<?= $p['id_penginapan'] ?>"><?= $p['nama_pelanggan'] ?></option>
+                                        <option value="<?= $p['id_penginapan'] ?>">Kamar <?= $p['no_kamar'] ?> - <?= $p['nama_pelanggan'] ?></option>
                                     <?php endforeach; ?>
                                 </select>
                                 <div class="form-text text-danger"><?= form_error('pelanggan'); ?></div>
@@ -25,8 +24,8 @@
                     </div>
                 </div>
                 <br>
-                <button type="submit" class="btn btn-success">Simpan</button>
-                <button type="reset" class="btn btn-warning">Reset</button>
+                <a href="<?php echo base_url() ?>mission" class="btn btn-md btn-secondary">Kembali</a>
+                <button type="submit" class="btn btn-success float-end">Simpan</button>
             </form>
         </div>
     </div>

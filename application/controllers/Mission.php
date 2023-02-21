@@ -16,6 +16,7 @@ class Mission extends CI_Controller
     }
     public function index()
     {
+        
         $data['gamifikasi'] = $this->Gamifikasi_model->gamifikasi();
         $data['user'] = $this->db->get_where('akun', ['username' => $this->session->userdata('username')])->row_array();
         $data['judul'] = 'Lakukan Misimu!';
