@@ -51,41 +51,51 @@ class Gamifikasi_model extends CI_Model
     public function calculate($id_gamifikasi)
     {
         $calculate = $this->input->post('point', true) +  $this->input->post('tambah_point', true);
-        if($calculate >= 50) {
+        if($calculate >= 50 &&  $calculate < 100) {
             $level = 2;
-        }else if ($calculate >= 100){
+        }else if ($calculate >= 100 &&  $calculate < 150){
             $level = 3;
-        } else if ($calculate >= 150){
+        } else if ($calculate >= 150 &&  $calculate < 200){
             $level = 4; 
-        }else if ($calculate >= 200){
+        }else if ($calculate >= 200 &&  $calculate < 250){
             $level = 5;
-        }else if ($calculate >= 250){
+        }else if ($calculate >= 250 &&  $calculate < 300){
             $level = 6;
-        }else if ($calculate >= 300){
+        }else if ($calculate >= 300 &&  $calculate < 350){
             $level = 7;
-        }else if ($calculate >= 350){
+        }else if ($calculate >= 350 &&  $calculate < 400){
             $level = 8;
-        }else if ($calculate >= 400){
+        }else if ($calculate >= 400 &&  $calculate < 500){
             $level = 9;
-        }else if ($calculate >= 500){
+        }else if ($calculate >= 500 &&  $calculate < 600){
             $level = 10;
-        }
-
-        if($level >=5){
-            $badge = 'Bronze';
-        } else if($level >=10) {
-            $badge = 'Silver';
-        } else if($level >=15) {
-            $badge = 'Gold';
-        } else {
-            $badge = 'Iron';
+        }else if ($calculate >= 600 &&  $calculate < 700){
+            $level = 11;
+        }else if ($calculate >= 700){
+            $level = 12;
         }
 
         $data = [
             "point" =>  $calculate,
             "level" =>  $level,
-            "badge" => $badge,
         ];
+
+        if($level >=3 && $level < 5){
+            $badge = 'Bronze';
+        } else if($level >=5  && $level < 8) {
+            $badge = 'Silver';
+        } else if($level >=8  && $level < 11) {
+            $badge = 'Gold';
+        } else if($level >=11) {
+            $badge = 'Platinum';
+        } else {
+            $badge = 'Iron';
+        }
+
+        $data = [
+            "badge" =>  $badge,
+        ];
+        
         $this->db->where('id_gamifikasi', $id_gamifikasi);
         $this->db->update('gamifikasi', $data);
     }

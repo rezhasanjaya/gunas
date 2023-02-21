@@ -30,42 +30,6 @@ class Pegawai_model extends CI_Model
 
     public function tambahDataPegawai()
     {
-        $jabat = $this->input->post('jabatan');
-        if($jabat == 'Pelayan'){
-            $value= $this->input->post('nama_pegawai', true);
-            $first_word = strtok($value, " ");
-            
-            $data = [
-                "nama_pegawai" => $this->input->post('nama_pegawai', true),
-                "jenis_kelamin" => $this->input->post('jenis_kelamin', true),
-                "jabatan" => $this->input->post('jabatan', true),
-                "tgl_lahir" => $this->input->post('tgl_lahir', true),
-                "tempat_lahir" => $this->input->post('tempat_lahir', true),
-                "no_telp" => $this->input->post('no_telp', true)
-            ];
-            $this->db->insert('pegawai', $data);
-            $insert_id = $this->db->insert_id();
-            $getId = strval($insert_id);
-
-            $data2 = [
-                "username" => strtolower($first_word.$getId),
-                "email" => null,
-                "password" => md5('password123'),
-                "role_id" => 3,
-                "id_pegawai " =>  $insert_id,
-                "image" => 'default.jpg',
-            ];
-            $this->db->insert('akun', $data2);
-            $insert_id = $this->db->insert_id();
-            $data3 = [
-                "id_akun" => $insert_id,
-                "level" => 1,
-                "point" => 0,
-                "badge" => 'Iron',
-            ];
-            $this->db->insert('gamifikasi', $data3);
-
-        } elseif ($jabat == 'Resepsionis') {
             $value= $this->input->post('nama_pegawai', true);
             $first_word = strtok($value, " ");
             $data = [
@@ -80,7 +44,7 @@ class Pegawai_model extends CI_Model
             $insert_id = $this->db->insert_id();
             $getId = strval($insert_id);
             $data2 = [
-                "username" => strtolower($first_word.$getId),
+                "username" => strtolower("gunas".$first_word.$getId),
                 "email" => null,
                 "password" => md5('password123'),
                 "role_id" => 2,
@@ -92,22 +56,11 @@ class Pegawai_model extends CI_Model
             $data3 = [
                 "id_akun" => $insert_id,
                 "level" => 1,
+                "max_point" => 50,
                 "point" => 0,
                 "badge" => 'Iron',
             ];
             $this->db->insert('gamifikasi', $data3);
-
-        } else {
-            $data = [
-                "nama_pegawai" => $this->input->post('nama_pegawai', true),
-                "jenis_kelamin" => $this->input->post('jenis_kelamin', true),
-                "jabatan" => $this->input->post('jabatan', true),
-                "tgl_lahir" => $this->input->post('tgl_lahir', true),
-                "tempat_lahir" => $this->input->post('tempat_lahir', true),
-                "no_telp" => $this->input->post('no_telp', true)
-            ];
-            $this->db->insert('pegawai', $data);
-        }
     }
 
     public function hapusDataPegawai($id_pegawai)
