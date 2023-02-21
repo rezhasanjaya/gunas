@@ -1,10 +1,10 @@
     <div class="container">
         <h2 class="pb-2 mb-4 mt-3 border-bottom"><center><b>Achievement Page</b></center></h2>
-	    <p>Here are your mission</p>
-        <a href="<?=base_url() ?>Mission/assignment">
+	    <p>Berikut adalah progress dari misi-misimu</p>
+        <a style="text-decoration:none" href="<?=base_url() ?>Mission/assignment">
         <div class="card mb-3">
             <div class="row g-0">
-                <div class="col-md-4">
+                <div class="col-md-2">
                     <img src="assets/img/deluxe.jpg" class="img-fluid rounded-start" alt="gambar1">
                 </div>
                 <div class="col-md-8">
@@ -22,7 +22,7 @@
         </a>
         <div class="card mb-3">
             <div class="row g-0">
-                <div class="col-md-4">
+                <div class="col-md-2">
                     <img src="assets/img/deluxe.jpg" class="img-fluid rounded-start" alt="...">
                 </div>
                 <div class="col-md-8">
@@ -39,7 +39,7 @@
         </div>
         <div class="card mb-3">
             <div class="row g-0">
-                <div class="col-md-4">
+                <div class="col-md-2">
                     <img src="assets/img/deluxe.jpg" class="img-fluid rounded-start" alt="...">
                 </div>
                 <div class="col-md-8">
