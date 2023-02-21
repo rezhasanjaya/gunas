@@ -12,6 +12,7 @@ class Mission extends CI_Controller
         }
         $this->load->library('form_validation');
         $this->load->model('Gamifikasi_model');
+        $this->load->model('Penginapan_model');
     }
     public function index()
     {
@@ -28,6 +29,7 @@ class Mission extends CI_Controller
         $data['gamifikasi'] = $this->Gamifikasi_model->gamifikasi();
         $data['user'] = $this->db->get_where('akun', ['username' => $this->session->userdata('username')])->row_array();
         $data['judul'] = 'Selesaikan pekerjaanmu!';
+        $data['pelanggan'] = $this->Penginapan_model->pelayanan();
         $this->load->view('templates/head3', $data);
         $this->load->view('gamifikasi/assignment', $data);
         $this->load->view('templates/foot3');

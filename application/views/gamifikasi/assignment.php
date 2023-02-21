@@ -7,16 +7,27 @@
         </div>
         <div class="card-body">
             <p>Pilih Nama Pengunjung Yang Sudah Dilayani</p>
-        </div>
-        <div class="dropdown">
-            <button class="btn btn-info dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Pilih Pengunjung
-            </button>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
+            <?php var_dump($pelanggan) ?>
+            <form action="" method="POST">
+                        <div class="form-group">
+                            <div>
+                            <div>
+                            <div class="form-group mt-3 ">
+                            <label for="pelanggan">Pelanggan</label>
+                                <select class="js-states form-control" name="pelanggan" id="pelanggan">
+                                    <option>Pilih Nama Pelanggan</option>
+                                    <?php foreach ($pelanggan as $p) : ?>
+                                        <option value="<?= $p=["id_penginapan"] ?>"><?= $p = ["nama_pelanggan"] ?></option>
+                                    <?php endforeach; ?>
+                                </select>
+                                <div class="form-text text-danger"><?= form_error('pelanggan'); ?></div>
+                            </div>
+                                    </div>
+                            </div>
+                        <br>
+                        <button type="submit" class="btn btn-success">Simpan</button>
+                        <button type="reset" class="btn btn-warning">Reset</button>
+            </form>
         </div>
     </div>
 </div>

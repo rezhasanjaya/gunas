@@ -15,6 +15,7 @@ class Penginapan_model extends CI_Model
             "uang_bayar" => $this->input->post('uang_bayar', true),
             "uang_kembali" => $this->input->post('uang_kembali', true),
             "done" => 0,
+            "pelayanan" => 0,
         ];
         $this->db->insert('data_penginapan', $data);
     }
@@ -42,5 +43,17 @@ class Penginapan_model extends CI_Model
         ];
         $this->db->where('id_penginapan', $id_penginapan);
         $this->db->update('data_penginapan', $data1);
+    }
+
+    public function pelayanan()
+    {
+        $this->db->select('*');
+        $this->db->from('data_penginapan');
+        $this->db->join('kamar', 'data_penginapan.no_kamar = kamar.no_kamar');
+        $this->db->join('pegawai', 'data_penginapan.id_pegawai = pegawai.id_pegawai');
+        $this->db->where('kamar.cek', 1);
+        $this->db->where('data_penginapan.done', 0);
+        $query = $this->db->get();
+        return $query->result_array();
     }
 }
