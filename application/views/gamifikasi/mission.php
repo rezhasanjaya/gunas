@@ -12,7 +12,7 @@ a {
         <a href="<?=base_url() ?>Mission/assignment">
         <div class="card mb-3">
             <div class="row g-0">
-                <div class="col-md-4">
+                <div class="col-md-2">
                     <img src="assets/img/deluxe.jpg" class="img-fluid rounded-start" alt="gambar1">
                 </div>
                 <div class="col-md-8">
