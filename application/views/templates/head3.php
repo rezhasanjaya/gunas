@@ -62,7 +62,7 @@
                         <a class="nav-link" aria-current="page" href="<?= base_url() ?>PegawaiPage"><b>Dashboard</b></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="<?= base_url() ?>PegawaiPage/mission"><b>Mission</b></a>
+                        <a class="nav-link" aria-current="page" href="<?= base_url() ?>Mission"><b>Mission</b></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="<?= base_url() ?>PegawaiPage/rank"><b>Ranking</b></a>

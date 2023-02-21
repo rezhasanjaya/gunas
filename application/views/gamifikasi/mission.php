@@ -1,7 +1,7 @@
     <div class="container">
         <h1>Achievement Page</h1>
 	    <p>Here are your mission</p>
-        <a href="<?=base_url() ?>PegawaiPage/assignment">
+        <a href="<?=base_url() ?>Mission/assignment">
         <div class="card mb-3">
             <div class="row g-0">
                 <div class="col-md-4">
