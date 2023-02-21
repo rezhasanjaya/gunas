@@ -44,6 +44,15 @@ class PegawaiPage extends CI_Controller
         $this->load->view('templates/foot3');
     }
 
+    public function assignment()
+    {
+        $data['gamifikasi'] = $this->Gamifikasi_model->gamifikasi();
+        $data['user'] = $this->db->get_where('akun', ['username' => $this->session->userdata('username')])->row_array();
+        $data['judul'] = 'Selesaikan pekerjaanmu!';
+        $this->load->view('templates/head3', $data);
+        $this->load->view('gamifikasi/assignment', $data);
+        $this->load->view('templates/foot3');
+    }
 
     public function logout()
     {
