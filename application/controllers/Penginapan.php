@@ -72,7 +72,7 @@ class Penginapan extends CI_Controller
             $this->Penginapan_model->checkout();
             $this->Penginapan_model->done();
             $this->session->set_flashdata('checkout', 'Check Out');
-            redirect('gamifikasi');
+            redirect('penginapan');
         }
     }
 
@@ -122,7 +122,7 @@ class Penginapan extends CI_Controller
             $this->Penginapan_model->checkout();
             $this->Penginapan_model->done();
             $this->session->set_flashdata('checkout', 'Check Out');
-            redirect('gamifikasi');
+            redirect('penginapan');
         }
     }
 
@@ -172,7 +172,7 @@ class Penginapan extends CI_Controller
             $this->Penginapan_model->checkout();
             $this->Penginapan_model->done();
             $this->session->set_flashdata('checkout', 'Check Out');
-            redirect('gamifikasi');
+            redirect('penginapan');
         }
     }
 }

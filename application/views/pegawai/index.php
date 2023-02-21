@@ -8,6 +8,7 @@
                     <div class="container px-4 py-2" id="hanging-icons">
                         <h2 class="pb-2 mb-4 border-bottom"><b>Data Pegawai</b></h2>
                         <a href="<?php echo base_url() ?>pegawai/tambah/" class="btn btn-sm btn-success" style="margin-bottom: 10px"><b>Tambah Data</b></a>
+                        <a href="<?php echo base_url() ?>pegawai/reset_mPoint/" class="btn btn-sm btn-secondary" onclick="return confirm('Yakin?');" style="margin-bottom: 10px"><b>Reset Month Point</b></a>
                         <?php if (empty($pegawai)) : ?>
                             <div class="row">
                             <div class="col-md-14">

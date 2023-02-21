@@ -70,7 +70,7 @@ class Kamar extends CI_Controller
         $this->Penginapan_model->checkout($no_kamar);
         $this->Penginapan_model->done($id_penginapan);
         $this->session->set_flashdata('checkout', 'Check Out');
-        redirect('Gamifikasi');
+        redirect('penginapan');
     }
 
 }

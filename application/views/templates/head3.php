@@ -83,7 +83,7 @@
                     <li>
                         <?php if ($this->session->userdata('role_id') == '1') : ?>
                             <a href="<?php echo base_url() ?>Dashboard/logout" onclick="return confirm('Yakin Ingin Log Out?');" class="dropdown-item">LogOut</a>
-                        <?php elseif ($this->session->userdata('role_id') == '3') : ?>
+                        <?php elseif ($this->session->userdata('role_id') == '2') : ?>
                             <a href="<?php echo base_url() ?>PegawaiPage/logout" onclick="return confirm('Yakin Ingin Log Out?');" class="dropdown-item">LogOut</a>
                         <?php endif; ?>
                     </li>

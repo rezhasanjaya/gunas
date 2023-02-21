@@ -61,6 +61,44 @@ class Pegawai_model extends CI_Model
                 "badge" => 'Iron',
             ];
             $this->db->insert('gamifikasi', $data3);
+            if ($this->input->post('jabatan') == 'Pelayan'){
+                $insert_id = $this->db->insert_id();
+                $misi1 = [
+                    "id_gamifikasi" => $insert_id,
+                    "mission" => "Melayani Pelanggan",
+                    "keterangan" => "Layani pelanggan yang datang dengan membawa dan mengantarkan pelanggan menuju kamar",
+                    "point" => 10,
+                    "done"=> 0,
+                ];
+                $misi2 = [
+                    "id_gamifikasi" => $insert_id,
+                    "mission" => "Merapikan Kamar",
+                    "keterangan" => "Merapikan kamar yang telah diisi pelanggan setelah melakukan check out",
+                    "point" => 5,
+                    "done"=> 0,
+                ];
+                $this->db->insert('mission', $misi1);
+                $this->db->insert('mission', $misi2);
+            } elseif ($this->input->post('jabatan') == 'Resepsionis') {
+                $insert_id = $this->db->insert_id();
+                $misi1 = [
+                    "id_gamifikasi" => $insert_id,
+                    "mission" => "Melayani Reservasi",
+                    "keterangan" => "melayani pelanggan yang reservasi",
+                    "point" => 10,
+                    "done"=> 0,
+                ];
+                $misi2 = [
+                    "id_gamifikasi" => $insert_id,
+                    "mission" => "Merapikan Kunci",
+                    "keterangan" => "Merapikan kunci kamar sesuai dengan kategori kamar",
+                    "point" => 5,
+                    "done"=> 0,
+                ];
+                $this->db->insert('mission', $misi1);
+                $this->db->insert('mission', $misi2);
+            } 
+            
     }
 
     public function hapusDataPegawai($id_pegawai)

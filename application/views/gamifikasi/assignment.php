@@ -2,22 +2,45 @@
     <h1 class="mt-3 border-bottom"><b>Your Assignment</b></h1>
 	<p>Selesaikan pekerjaanmu dalam melayani pengunjung.</p>
     <div class="card">
-        <div class="card-header">
-            Pelayanan Pengunjung 1
-        </div>
         <div class="card-body">
-            <p>Pilih Nama Pengunjung Yang Sudah Dilayani</p>
+            <p>Masukan Bukti</p>
             <form action="" method="POST">
                 <div class="form-group">
                     <div>
                         <div>
+                            <input type="hidden" value="<?= $misi['id_mission']; ?>" id="id_mission" name="id_mission">
+                            <input type="hidden" value="<?= $gamifikasi['month_point']; ?>" id="month_point" name="month_point">
+                            <input type="hidden" name="point" value="<?= $gamifikasi['point']; ?>">
+                            <input type="hidden" name="month_point" value="<?= $gamifikasi['month_point']; ?>">
+                            <input type="hidden" name="misi_selesai" value="<?= $gamifikasi['misi_selesai']; ?>">
+                            <input type="hidden" name="point_misi" value="<?= $misi['point']; ?>">
+                            
+                            <input type="hidden" name="type" value="<?= $misi['mission']; ?>">
+                            <div class="form-text text-danger"><?= form_error('point'); ?></div>
                             <div class="form-group mt-3 ">
+                                
+                                <?php 
+                                if ($misi['done'] == 1) { ?> 
+                                    <div class="mb-3">
+                                        <label for="exampleFormControlInput1" class="form-label">Pelanggan</label>
+                                        <input type="text" class="form-control" id="utility" value="<?= "Kamar ".$misi['utility'] ?>" disabled>
+                                    </div>
+                                <?php } elseif ($misi['done'] == 0){ ?>
                                 <select class="js-states form-control" name="pelanggan" id="pelanggan">
-                                    <option>Pilih Nama Pelanggan</option>
+                                  
+                                    <?php if($misi['mission'] == 'Merapikan Kamar') { ?>
+                                        <option>Pilih Kamar Yang dirapihkan</option>
+                                        <?php foreach ($merapikan as $p) : ?>
+                                            <option value="<?= $p['no_kamar'] ?>">Kamar <?= $p['no_kamar'] ?> - <?= $p['nama_pelanggan'] ?></option>
+                                        <?php endforeach; ?>
+                                    <?php }elseif($misi['mission'] == 'Melayani Pelanggan') { ?>
+                                        <option>Pilih Nama Pelanggan</option>
                                     <?php foreach ($pelanggan as $p) : ?>
-                                        <option value="<?= $p['id_penginapan'] ?>">Kamar <?= $p['no_kamar'] ?> - <?= $p['nama_pelanggan'] ?></option>
+                                        <option value="<?= $p['no_kamar'] ?>">Kamar <?= $p['no_kamar'] ?> - <?= $p['nama_pelanggan'] ?></option>
                                     <?php endforeach; ?>
+                                    <?php } ?>
                                 </select>
+                                <?php } ?>
                                 <div class="form-text text-danger"><?= form_error('pelanggan'); ?></div>
                             </div>
                         </div>

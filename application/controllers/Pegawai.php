@@ -12,6 +12,7 @@ class Pegawai extends CI_Controller
         }
         $this->load->library('form_validation');
         $this->load->model('Pegawai_model');
+        $this->load->model('Gamifikasi_model');
     }
 
     public function index()
@@ -76,5 +77,13 @@ class Pegawai extends CI_Controller
         $this->session->set_flashdata('flash', 'Dihapus');
         redirect('pegawai');
     }
+
+    public function reset_mPoint()
+    {
+        $this->Gamifikasi_model->reset_mPoint();
+        $this->session->set_flashdata('flash', 'Direset');
+        redirect('pegawai');
+    }
+
 
 }

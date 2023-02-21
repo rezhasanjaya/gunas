@@ -22,9 +22,9 @@
                             <tr>
                             <th scope="col">#</th>
                             <th scope="col">Nama</th>
-                            <th scope="col">Jenis Kelamin</th>
                             <th scope="col">Jabatan</th>
-                            <th scope="col">Point</th>
+                            <th scope="col">Month Point<Point</th>
+                            <th scope="col">Misi Selesai</th>
                             <th scope="col">Badge</th>
                             <th scope="col">Level</th>
                             </tr>
@@ -38,9 +38,9 @@
                                 <tr>
                                 <td><?php echo $no++ ?></td>
                                 <td><?php echo $pegawai['nama_pegawai'] ?></td>
-                                <td><?php echo $pegawai['jenis_kelamin'] ?></td>
                                 <td><?php echo $pegawai['jabatan'] ?></td>
-                                <td><?php echo $pegawai['point'].' Point' ?></td>
+                                <td><?php echo $pegawai['month_point'].' Point' ?></td>
+                                <td><?php echo $pegawai['misi_selesai']. ' Misi' ?></td>
                                 <td><?php echo $pegawai['badge'] ?></td>
                                 <td><?php echo 'Level '. $pegawai['level'] ?></td>
                                 </tr>

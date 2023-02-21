@@ -41,4 +41,6 @@ class Gamifikasi extends CI_Controller
         }
     }
 
+    
+
 }
