@@ -33,6 +33,8 @@ class Mission extends CI_Controller
         $data['judul'] = 'Selesaikan pekerjaanmu!';
         $data['pelanggan'] = $this->Penginapan_model->pelayanan();
         $data['merapikan'] = $this->Penginapan_model->merapikan();
+        $data['reservasi'] = $this->Penginapan_model->reservasi();
+        $data['kunci'] = $this->Penginapan_model->keyManage();
         $this->form_validation->set_rules('point', 'Point', 'required');
         if ($this->form_validation->run() == FALSE) {
             $this->load->view('templates/head3', $data);

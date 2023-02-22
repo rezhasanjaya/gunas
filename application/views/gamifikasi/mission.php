@@ -50,9 +50,13 @@ a {
                 <div class="col-md-2">
                 <?php 
                     if($m['mission'] == 'Melayani Pelanggan' ){ ?>
-                    <img src="assets/img/deluxe.jpg" class="img-fluid rounded-start" style="width : 100%; height:100%" alt="gambar1">
+                        <img src="assets/img/deluxe.jpg" class="img-fluid rounded-start" style="width : 100%; height:100%" alt="gambar1">
                     <?php } elseif ($m['mission'] == 'Merapikan Kamar'){ ?>
                         <img src="assets/img/service.jpg" class="img-fluid rounded-start" style="width : 100%; height:100%" alt="gambar2">
+                    <?php } elseif ($m['mission'] == 'Melayani Reservasi'){ ?>
+                        <img src="assets/img/reservasi.jpg" class="img-fluid rounded-start" style="width : 100%; height:100%" alt="gambar3">
+                    <?php } elseif ($m['mission'] == 'Merapikan Kunci'){ ?>
+                        <img src="assets/img/keymanage.jpg" class="img-fluid rounded-start" style="width : 100%; height:100%" alt="gambar1">
                     <?php }?>
                 </div>
                 <div class="col-md-8">

@@ -68,4 +68,31 @@ class Penginapan_model extends CI_Model
         $query = $this->db->get();
         return $query->result_array();
     }
+
+    public function reservasi()
+    {
+        $this->db->select('*');
+        $this->db->from('data_penginapan');
+        $this->db->join('kamar', 'data_penginapan.no_kamar = kamar.no_kamar');
+        $this->db->join('pegawai', 'data_penginapan.id_pegawai = pegawai.id_pegawai');
+        $this->db->where('data_penginapan.done', 0);
+        $this->db->where('data_penginapan.pelayanan', 0);
+        $this->db->where('data_penginapan.dirapikan', 0);
+        $query = $this->db->get();
+        return $query->result_array();
+    }
+
+    public function keyManage()
+    {
+        $this->db->select('*');
+        $this->db->from('data_penginapan');
+        $this->db->join('kamar', 'data_penginapan.no_kamar = kamar.no_kamar');
+        $this->db->join('pegawai', 'data_penginapan.id_pegawai = pegawai.id_pegawai');
+        $this->db->where('data_penginapan.done', 1);
+        $this->db->where('data_penginapan.pelayanan', 1);
+        $this->db->where('data_penginapan.dirapikan', 1);
+        $this->db->where('data_penginapan.complete', 0);
+        $query = $this->db->get();
+        return $query->result_array();
+    }
 }

@@ -137,9 +137,17 @@ class Gamifikasi_model extends CI_Model
             $data2 = [
                 "dirapikan" => 1,
             ];
+        }  elseif($this->input->post('type') == 'Melayani Reservasi'){
+            $data2 = [
+                "id_pegawai" => $this->input->post('id_pegawai'),
+            ];
+        }  elseif($this->input->post('type') == 'Merapikan Kunci'){
+            $data2 = [
+                "complete" => 1,
+            ];
         }
-        
-        $this->db->where('no_kamar', $this->input->post('pelanggan'));
+
+        $this->db->where('id_penginapan', $this->input->post('pelanggan'));
         $this->db->update('data_penginapan', $data2);
     }
 
