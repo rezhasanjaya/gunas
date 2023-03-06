@@ -39,7 +39,7 @@ class Gamifikasi_model extends CI_Model
     $this->db->from('akun');
     $this->db->join('pegawai', 'akun.id_pegawai = pegawai.id_pegawai');
     $this->db->join('gamifikasi', 'akun.id = gamifikasi.id_akun');
-    $this->db->order_by('gamifikasi.point', 'desc'); // Order by point in descending order
+    $this->db->order_by('gamifikasi.month_point', 'desc'); // Order by point in descending order
     $query = $this->db->get();
     return $query->result_array();
 }
